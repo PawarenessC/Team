@@ -9,7 +9,7 @@ class T {
 	private static $team;
 	private static $pteam;
 
-	public static function createTeam(string $teamname){
+	public static function createTeam(string $teamname): void{
 
 		if(self::checkTeam($teamname)){
 			return true;
@@ -19,13 +19,13 @@ class T {
 
 	}
 
-	public static function checkTeam(string $teamname){
+	public static function checkTeam(string $teamname): bool{
 
 		return(isset(self::$team[$teamname])) ? true : false;
 
 	}
 
-	public static function checkPTeam(Player $player){
+	public static function checkPTeam(Player $player): bool{
 
 		$name = $player->getName();
 
@@ -33,7 +33,7 @@ class T {
 
 	}
 	
-	public static function deleteTeam(string $teamname){
+	public static function deleteTeam(string $teamname): bool{
 		
 		if(self::checkTeam($teamname)){
 			
@@ -105,7 +105,7 @@ class T {
 
 	}
 
-	public static function getAllPlayer(){
+	public static function getAllPlayer(): array{
 
 		$all = self::$pteam;
 
@@ -114,7 +114,7 @@ class T {
 
 	}
 
-	public static function getAllTeam(){
+	public static function getAllTeam(): array{
 
 		$all = self::$team;
 
