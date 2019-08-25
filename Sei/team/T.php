@@ -12,7 +12,7 @@ class T {
 	public static function createTeam(string $teamname): bool{
 
 		if(self::checkTeam($teamname)){
-			return true;
+			return false;
 		}
 
 		static::$team[$teamname] = 0;
@@ -25,7 +25,7 @@ class T {
 
 	}
 
-	public static function checkPTeam(Player $player): bool{
+	public static function checkInTeam(Player $player): bool{
 
 		$name = $player->getName();
 
@@ -60,12 +60,13 @@ class T {
 
 		if(self::checkTeam($teamname)){
 
-			if(self::checkPTeam($player)) return true;
+			if(self::checkInTeam($player)) return true;
 
 			self::$pteam[$name] = $teamname;
 			++self::$team[$teamname];
 
 		}
+		return false;
 
 	}
 
@@ -74,7 +75,7 @@ class T {
 
 		if(self::checkTeam($teamname)){
 
-			if(!self::checkPTeam($player)) return true;
+			if(!self::checkInTeam($player)) return false;
 
 			self::$pteam[$name] = $teamname;
 			--self::$team[$teamname];
@@ -83,9 +84,9 @@ class T {
 
 	}
 
-	public static function getTeamData(string $teamname){
+	public static function getTeamData(string $teamname): int{
 
-		if(!self::checkTeam($teamname)) return false;
+		if(!self::checkTeam($teamname)) return null;
 
 		$team = self::$team[$teamname];
 		
@@ -93,9 +94,9 @@ class T {
 		
 	}
 
-	public static function getPTeam(Player $player){
+	public static function getPTeam(Player $player): string{
 
-		if(!self::checkPTeam($player)) return false;
+		if(!self::checkInTeam($player)) return false;
 
 		$name = $player->getName();
 
@@ -109,7 +110,6 @@ class T {
 
 		$all = self::$pteam;
 
-		
 		return $all;
 
 	}
