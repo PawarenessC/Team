@@ -9,7 +9,7 @@ class T {
 	private static $team;
 	private static $pteam;
 
-	public static function createTeam(string $teamname): void{
+	public static function createTeam(string $teamname): bool{
 
 		if(self::checkTeam($teamname)){
 			return true;
@@ -54,7 +54,7 @@ class T {
 
 	}
 
-	public static function joinTeam(string $teamname, Player $player){
+	public static function joinTeam(string $teamname, Player $player): bool{
 
 		$name = $player->getName();
 
@@ -69,7 +69,7 @@ class T {
 
 	}
 
-	public static function leaveTeam(string $teamname, Player $player){
+	public static function leaveTeam(string $teamname, Player $player): bool{
 		$name = $player->getName();
 
 		if(self::checkTeam($teamname)){
