@@ -4,10 +4,12 @@ PMMP Team Library
 ## Language
 Select Language: [English](#eng), [日本語](#jpn)
 
+
+
+
 <a name="eng"></a>
 # English
-I think that you can see how to use it more by looking at SamplePlugin.  
-詳しい使い方はSamplePluginを見ればわかると思います  
+I think that you can see how to use it more by looking at SamplePlugin. 
 
 **How to use**  
 Please be sure to write in use statement!  
