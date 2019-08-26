@@ -16,6 +16,7 @@ class T {
 		}
 
 		static::$team[$teamname] = 0;
+		return true;
 
 	}
 
@@ -60,10 +61,11 @@ class T {
 
 		if(self::checkTeam($teamname)){
 
-			if(self::checkInTeam($player)) return true;
+			if(self::checkInTeam($player)) return false;
 
 			self::$pteam[$name] = $teamname;
 			++self::$team[$teamname];
+			return true;
 
 		}
 		return false;
@@ -79,8 +81,10 @@ class T {
 
 			self::$pteam[$name] = $teamname;
 			--self::$team[$teamname];
+			return true;
 
 		}
+		return false;
 
 	}
 
@@ -96,7 +100,7 @@ class T {
 
 	public static function getPTeam(Player $player): string{
 
-		if(!self::checkInTeam($player)) return false;
+		if(!self::checkInTeam($player)) return null;
 
 		$name = $player->getName();
 
