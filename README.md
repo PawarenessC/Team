@@ -40,9 +40,9 @@ Twitter : <https://twitter.com/MS_SEI0511>
 詳しい使い方はSamplePluginを見ればわかると思います
 
 **使い方**  
-このuse文を追加してください！
+このuse文を追加してください！    
 `use Sei\team\T;`  
-関数を呼び出す時は
+関数を呼び出す時は   
 `T::function()`
 
 **Functions**
@@ -60,5 +60,5 @@ Twitter : <https://twitter.com/MS_SEI0511>
     getAllTeam()//存在するチームが配列で返されます
 
 
-ここまで見て頂いてありがとうございます！ 何か問題かがありましたらTwitterまでお願いします
+ここまで見て頂いてありがとうございます！ 何か問題かがありましたらTwitterまでお願いします    
 Twitter : <https://twitter.com/MS_SEI0511>
